@@ -23,6 +23,7 @@ function getInstruction(food, step, callback, errorCallback) {
       // Invoke the provided callback or errorCallback
       if (!instruction) {
         errorCallback("Instruction step does not exist!");
+        console.log(errorCallback);
       } else {
         callback(instruction);
       }
