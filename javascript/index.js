@@ -120,9 +120,6 @@ makeBroccoli();
 // Bonus 2 - Promise all
 // ...
 async function makeBrusselsSprouts() {
-  setTimeout(() => {
-    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
-  }, 1000);
   Promise.all([
     obtainInstruction('brusselsSprouts', 0),
     obtainInstruction('brusselsSprouts', 1),
@@ -133,12 +130,11 @@ async function makeBrusselsSprouts() {
     obtainInstruction('brusselsSprouts', 6),
     obtainInstruction('brusselsSprouts', 7),
   ]).then((steps) => {
-    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
     steps.forEach((step) => {
-      document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
-      document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step}</li>`;
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
     });
-   
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
   });
   
 }
